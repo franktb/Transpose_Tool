@@ -51,15 +51,15 @@ public class NoteTranspose {
 				break;
 			}
 		}
-		
+
 		// gets the transposed note by using the offset(see wiki)
-		transposedIndex = (curr +Offset)%12;
-		while(transposedIndex < 0) {
+		transposedIndex = (curr + Offset) % 12;
+		while (transposedIndex < 0) {
 			transposedIndex = (transposedIndex + 12) % 12;
 		}
-		
+
 		transposedNote = quintCircleList[transposedIndex];
-		
+
 		return transposedNote;
 	}
 
@@ -73,15 +73,15 @@ public class NoteTranspose {
 	 */
 	public int getOffset(double distance) {
 		// the quintcircle is a modulo circle of 12
-			
-		return (int)(distance * 10) % 12;
+
+		return (int) (distance * 10) % 12;
 	}
-	
+
 	/*
-	  public static void main(String[] args) { NoteTranspose mytranspo = new
-	  NoteTranspose(); System.out.println(mytranspo.getOffset(-1));
-	  System.out.println(mytranspo.transpose("F", mytranspo.getOffset(1.5)));
-	  
-	  }
+	 * public static void main(String[] args) { NoteTranspose mytranspo = new
+	 * NoteTranspose(); System.out.println(mytranspo.getOffset(-1));
+	 * System.out.println(mytranspo.transpose("F", mytranspo.getOffset(1.5)));
+	 * 
+	 * }
 	 */
 }
