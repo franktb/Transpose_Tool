@@ -21,6 +21,20 @@ public class Spielwiese {
 		File file = new File("src/logic/blubb.txt");
 		
 		
+
+		
+		
+		
+		
+		
+		
+		
 	}
+	
+	
+	
+	
+	
+	
 
 }
