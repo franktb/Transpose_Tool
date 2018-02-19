@@ -5,6 +5,20 @@ import java.util.Map;
 
 public class SongTransposer {
 	private Map<String, String> transposeMap = new HashMap<>();
+	private Map<String, String> enharmonicConfusion = new HashMap<>();
+
+	/**
+	 * constructor which also sets up the replacement map for the enharmonic
+	 * confusion
+	 */
+	public void SongTransposer() {
+		enharmonicConfusion.put("Des", "Cis");
+		enharmonicConfusion.put("Es", "Dis");
+		enharmonicConfusion.put("Ges", "Fis");
+		enharmonicConfusion.put("As", "Gis");
+		enharmonicConfusion.put("B", "Ais");
+
+	}
 
 	public void buildLookupTable(int distance) {
 		NoteTranspose noteTranspose = new NoteTranspose();
@@ -21,6 +35,10 @@ public class SongTransposer {
 		this.transposeMap.put("Gis", noteTranspose.transpose("Gis", Offset));
 		this.transposeMap.put("Dis", noteTranspose.transpose("Dis", Offset));
 		this.transposeMap.put("Ais", noteTranspose.transpose("Ais", Offset));
+	}
+
+	public void prepare(String note) {
+
 	}
 
 	public static void main(String[] args) {
